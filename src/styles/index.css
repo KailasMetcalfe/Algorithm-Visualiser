@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Monserrat);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Monserrat-Italic);
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(./fonts/Roboto);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(./fonts/Roboto-Italic);
+    font-style: italic;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: border-box;
+    font-family: Roboto, system-ui, sans-serif;
+}
