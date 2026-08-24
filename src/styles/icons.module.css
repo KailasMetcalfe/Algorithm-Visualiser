@@ -1,0 +1,14 @@
+.wrapper {
+    display: block;
+    width: 25px;
+    height: auto;
+    /* border: 1px black solid; */
+}
+
+.wrapper > svg {
+    display: block;
+}
+
+.line {
+    stroke: black;
+}
