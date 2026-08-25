@@ -1,0 +1,61 @@
+@font-face {
+    font-family: JetBrainsMono;
+    src: url(./fonts/JetBrainsMono.ttf);
+}
+
+.codeBlock {
+    width: max-content;
+}
+
+/* Actual code text */
+.wrapper,
+.wrapper * {
+    font-family: JetBrainsMono, monospace;
+    font-size: 0.8rem;
+}
+
+.wrapper {
+    width: 35rem;
+    max-height: 40rem;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.wrapper pre {
+    border-radius: inherit;
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.activeDark,
+.activeLight,
+.notActive {
+    padding: 0.2rem 1rem;
+    background-color: rgb(235, 235, 235);
+    border: 1px rgb(117, 117, 117) solid;
+}
+
+.activeLight {
+    background-color: rgb(88, 88, 88);
+}
+
+.activeDark {
+    background-color: beige;
+}
+
+.notActive {
+    background-color: rgb(197, 197, 197);
+}
+
+.brightness {
+    border: none;
+    background-color: transparent;
+}

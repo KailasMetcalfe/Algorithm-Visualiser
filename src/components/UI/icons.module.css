@@ -1,6 +1,6 @@
 .wrapper {
     display: block;
-    width: 25px;
+    width: var(--size);
     height: auto;
     /* border: 1px black solid; */
 }

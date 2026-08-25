@@ -41,7 +41,9 @@ function RenderArray({ items, leftP, rightP, middleP, found, last }) {
                 );
             })}
             {found ? (
-                <span className={styles.found}>Found</span>
+                last ? (
+                    <span className={styles.found}>Found</span>
+                ) : null
             ) : last ? (
                 <span className={styles.notFound}>Not found!</span>
             ) : null}

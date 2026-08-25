@@ -30,7 +30,7 @@
 }
 
 #root {
-    background-color: purple;
+    background-color: rgba(134, 0, 134, 0.918);
     height: 100vh;
 }
 
@@ -40,4 +40,9 @@ h1 {
     text-align: center;
     font-family: Montserrat, system-ui, sans-serif;
     font-weight: bold;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 0.2rem 0.4rem;
 }

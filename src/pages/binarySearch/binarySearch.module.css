@@ -9,7 +9,8 @@
     width: fit-content;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .buttons {
@@ -21,4 +22,20 @@
 .traverseButtons {
     display: flex;
     gap: 0.2rem;
+}
+
+.searchItem {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.searchItem > span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    text-decoration: underline 2px black;
+    text-underline-offset: 4px;
 }

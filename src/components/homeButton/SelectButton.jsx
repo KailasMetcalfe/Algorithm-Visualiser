@@ -1,6 +1,7 @@
-import SortIcon from "./UI/SortIcon";
-import SearchIcon from "./UI/SearchIcon";
-import GraphIcon from "./UI/GraphIcon";
+import SortIcon from "../UI/SortIcon";
+import SearchIcon from "../UI/SearchIcon";
+import GraphIcon from "../UI/GraphIcon";
+import styles from "./selectButton.module.css";
 import { useNavigate } from "react-router";
 
 function SelectButton({ type, name }) {
@@ -22,6 +23,7 @@ function SelectButton({ type, name }) {
 
     return (
         <button
+            className={styles.button}
             type="button"
             onClick={() => navigate("/" + name.replace(" ", "").toLowerCase())}
         >

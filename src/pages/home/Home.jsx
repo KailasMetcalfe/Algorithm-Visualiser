@@ -1,4 +1,4 @@
-import SelectButton from "../../components/SelectButton";
+import SelectButton from "../../components/homeButton/SelectButton";
 import AnimatedSort from "../../components/UI/AnimatedSort";
 import styles from "./home.module.css";
 
