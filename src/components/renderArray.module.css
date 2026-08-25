@@ -1,5 +1,5 @@
 .iteration {
-    --item-size: 50px;
+    --item-size: 70px;
     display: grid;
     grid-template: 1fr 1fr auto / repeat(var(--length), var(--item-size));
     width: fit-content;
@@ -34,10 +34,18 @@
     grid-column: 1 / -1;
 }
 
+/* Pointers */
 .pointerGroup {
     grid-row: 1;
     justify-self: center;
     align-self: center;
+    font-weight: bold;
+    display: flex;
+    gap: 5px;
+}
+
+.pointerGroup > span {
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -57,14 +65,23 @@
 }
 
 .item {
+    font-size: 1.4rem;
     padding: 0.8rem;
     width: var(--item-size);
     height: var(--item-size);
-    border: 2px black solid;
+    border: 2px rgba(0, 0, 0, 0.26) solid;
+    color: rgba(0, 0, 0, 0.26);
     display: grid;
     place-items: center;
 }
 
+/* array item still in search range */
+.active {
+    color: black;
+    border: 2px black solid;
+}
+
+/* Array dynamic colouring for pointers */
 .left,
 .right,
 .middle {

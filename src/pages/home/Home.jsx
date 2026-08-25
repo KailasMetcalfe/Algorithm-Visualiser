@@ -1,6 +1,6 @@
-import SelectButton from "../components/SelectButton";
-import AnimatedSort from "../components/AnimatedSort";
-import styles from "../styles/home.module.css";
+import SelectButton from "../../components/SelectButton";
+import AnimatedSort from "../../components/UI/AnimatedSort";
+import styles from "./home.module.css";
 
 const algorithms = [
     { name: "Binary Search", type: "search" },

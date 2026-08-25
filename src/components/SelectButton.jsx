@@ -1,6 +1,6 @@
-import SortIcon from "./SortIcon";
-import SearchIcon from "./SearchIcon";
-import GraphIcon from "./GraphIcon";
+import SortIcon from "./UI/SortIcon";
+import SearchIcon from "./UI/SearchIcon";
+import GraphIcon from "./UI/GraphIcon";
 import { useNavigate } from "react-router";
 
 function SelectButton({ type, name }) {

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import styles from "../styles/icons.module.css";
+import styles from "./icons.module.css";
 
 export default memo(function SearchIcon() {
     return (

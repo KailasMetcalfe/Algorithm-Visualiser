@@ -1,4 +1,4 @@
-import styles from "../styles/renderArray.module.css";
+import styles from "./renderArray.module.css";
 
 function RenderArray({ items, leftP, rightP, middleP, found, last }) {
     return (
@@ -7,6 +7,7 @@ function RenderArray({ items, leftP, rightP, middleP, found, last }) {
                 {items.map((item, index) => {
                     const activeClasses = [
                         styles.item,
+                        index <= rightP && index >= leftP && styles.active,
                         index === leftP && styles.left,
                         index === rightP && styles.right,
                         index === middleP && styles.middle,

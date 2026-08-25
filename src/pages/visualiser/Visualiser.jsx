@@ -1,6 +1,6 @@
 import { useNavigate, Outlet } from "react-router";
 import { useState } from "react";
-import styles from "../styles/visualiser.module.css";
+import styles from "./visualiser.module.css";
 
 function Visualiser() {
     const navigate = useNavigate();

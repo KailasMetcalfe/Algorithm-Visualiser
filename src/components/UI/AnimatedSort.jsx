@@ -1,4 +1,4 @@
-import styles from "../styles/animatedSort.module.css";
+import styles from "./animatedSort.module.css";
 
 export default function AnimatedSort() {
     return (
