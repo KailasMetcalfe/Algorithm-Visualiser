@@ -27,7 +27,7 @@ def binarySearch(array, item):
     rightP = len(array) - 1
     middleP = math.floor((leftP + rightP) / 2)
 
-    while not(found) and leftP <= rightP:
+    while (not(found)) and (leftP <= rightP):
         if array[middleP] == item:
             found = True
         else:

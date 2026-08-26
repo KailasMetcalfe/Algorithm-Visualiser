@@ -27,18 +27,19 @@
     font-weight: 400;
     box-sizing: border-box;
     font-family: Roboto, system-ui, sans-serif;
+
+    --bold-font: Montserrat, system-ui, sans-serif;
 }
 
-#root {
-    background-color: rgba(134, 0, 134, 0.918);
-    height: 100vh;
+body {
+    background-color: rgba(145, 0, 145, 0.918);
 }
 
 h1 {
     color: whitesmoke;
     font-size: 3rem;
     text-align: center;
-    font-family: Montserrat, system-ui, sans-serif;
+    font-family: var(--bold-font);
     font-weight: bold;
 }
 

@@ -15,14 +15,15 @@
 }
 
 .wrapper {
-    width: 35rem;
+    width: 36rem;
     max-height: 40rem;
-    overflow-y: auto;
+    overflow: auto;
     border-radius: 10px;
 }
 
 .wrapper pre {
     border-radius: inherit;
+    margin: 0 !important;
 }
 
 .bar {

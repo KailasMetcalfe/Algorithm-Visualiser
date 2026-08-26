@@ -9,6 +9,9 @@ import { useState } from "react";
 export default function CodeBlock({ codeArray }) {
     const [language, setLanguage] = useState("javascript");
     const [isDark, setIsDark] = useState(true);
+
+    if (!codeArray || codeArray.length === 0) return null;
+
     return (
         <div className={styles.codeBlock}>
             <div className={styles.bar}>

@@ -1,4 +1,4 @@
-import binarySearch from "../../src/utils/binarySearch";
+import binarySearch from "../../src/pages/binarySearch/binarySearchAlg.js";
 
 describe("Check binarySearch invalid arguments", () => {
     it("Input not an array", () => {

@@ -1,0 +1,42 @@
+.main {
+    display: grid;
+    grid-template: 1fr auto / repeat(var(--size), 1fr);
+    align-items: center;
+    justify-items: center;
+    row-gap: 1rem;
+    column-gap: 5px;
+
+    --inactive-color: rgba(43, 43, 43, 0.473);
+    --active-color: black;
+}
+
+.activeBar,
+.inactiveBar {
+    display: flex;
+    --scale: 5px;
+    width: 2.5rem;
+    background-color: black;
+    align-self: flex-end;
+}
+
+.activeBar {
+    background-color: var(--active-color);
+}
+
+.inactiveBar {
+    background-color: var(--inactive-color);
+}
+
+.activeLabel,
+.inactiveLabel {
+    font-weight: bold;
+    font-family: var(--bold-font);
+}
+
+.activeLabel {
+    color: var(--active-color);
+}
+
+.inactiveLabel {
+    color: var(--inactive-color);
+}

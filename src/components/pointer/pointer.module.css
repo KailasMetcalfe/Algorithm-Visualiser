@@ -1,0 +1,10 @@
+.wrapper {
+    display: block;
+    width: calc(var(--size) * 1px);
+    height: auto;
+    /* border: 1px black solid; */
+}
+
+.wrapper > svg {
+    display: block;
+}
