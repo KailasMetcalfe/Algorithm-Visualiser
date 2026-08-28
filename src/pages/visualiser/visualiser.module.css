@@ -31,10 +31,27 @@
 .buttons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10rem;
+}
+
+.iterateButtons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .traverseButtons {
     display: flex;
     gap: 0.6rem;
+}
+
+.play {
+    display: flex;
+    padding: 0;
+    height: fit-content;
+}
+
+.play > img {
+    width: 25px;
 }

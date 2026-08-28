@@ -1,5 +1,5 @@
 import { useNavigate, Outlet } from "react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CodeBlock from "../../components/codeBlock/CodeBlock";
 import styles from "./visualiser.module.css";
 
@@ -12,6 +12,21 @@ function Visualiser() {
         randomise: undefined,
     });
     const [historyIndex, setHistoryIndex] = useState(0);
+    const [play, setPlay] = useState(false);
+
+    // Play button effect
+    useEffect(() => {
+        if (play) {
+            const intervalID = setInterval(() => {
+                historyIndex + 1 < algorithm.historyLength
+                    ? setHistoryIndex(historyIndex + 1)
+                    : setPlay(false);
+            }, 1000);
+
+            return () => clearTimeout(intervalID);
+        }
+    }, [play, historyIndex, algorithm.historyLength]);
+
     return (
         <div className={styles.page}>
             <div className={styles.header}>
@@ -34,26 +49,47 @@ function Visualiser() {
                         }}
                     />
                     <div className={styles.buttons}>
-                        <div className={styles.traverseButtons}>
+                        <div className={styles.iterateButtons}>
+                            <div className={styles.traverseButtons}>
+                                <button
+                                    type="button"
+                                    disabled={historyIndex - 1 < 0}
+                                    onClick={() =>
+                                        setHistoryIndex(historyIndex - 1)
+                                    }
+                                >
+                                    Prev
+                                </button>
+                                <button
+                                    type="button"
+                                    disabled={
+                                        historyIndex + 1 >=
+                                        algorithm.historyLength
+                                    }
+                                    onClick={() =>
+                                        setHistoryIndex(historyIndex + 1)
+                                    }
+                                >
+                                    Next
+                                </button>
+                            </div>
                             <button
                                 type="button"
-                                disabled={historyIndex - 1 < 0}
-                                onClick={() =>
-                                    setHistoryIndex(historyIndex - 1)
+                                className={styles.play}
+                                onClick={
+                                    play
+                                        ? () => setPlay(false)
+                                        : () => setPlay(true)
                                 }
                             >
-                                Prev
-                            </button>
-                            <button
-                                type="button"
-                                disabled={
-                                    historyIndex + 1 >= algorithm.historyLength
-                                }
-                                onClick={() =>
-                                    setHistoryIndex(historyIndex + 1)
-                                }
-                            >
-                                Next
+                                <img
+                                    src={
+                                        play
+                                            ? "./icons/pause.svg"
+                                            : "./icons/play.svg"
+                                    }
+                                    alt={play ? "pause" : "play"}
+                                />
                             </button>
                         </div>
                         <button

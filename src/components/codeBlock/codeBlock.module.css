@@ -58,6 +58,10 @@
 }
 
 .brightness {
+    padding: 0;
+    margin: 0.5rem;
+    margin-right: 0;
+    display: flex;
     border: none;
     background-color: transparent;
 }
