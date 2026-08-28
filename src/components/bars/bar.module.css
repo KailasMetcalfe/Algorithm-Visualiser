@@ -1,0 +1,23 @@
+.main {
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    row-gap: 1rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.bar {
+    --scale: 5px;
+    width: 2.5rem;
+    background-color: black;
+}
+
+.title,
+.value {
+    font-weight: bold;
+    font-family: var(--bold-font);
+}
+
+.title {
+    align-self: flex-end;
+}

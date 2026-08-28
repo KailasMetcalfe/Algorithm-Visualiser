@@ -1,6 +1,8 @@
 .main {
     display: grid;
-    grid-template: 1fr auto / repeat(var(--size), 1fr);
+    grid-template:
+        minmax(calc(var(--pointer-size) * 1px), 1fr)
+        auto auto / repeat(calc(var(--size) + 2), 1fr);
     align-items: center;
     justify-items: center;
     row-gap: 1rem;
@@ -12,11 +14,11 @@
 
 .activeBar,
 .inactiveBar {
-    display: flex;
     --scale: 5px;
     width: 2.5rem;
     background-color: black;
     align-self: flex-end;
+    grid-row-start: 2;
 }
 
 .activeBar {
@@ -31,6 +33,7 @@
 .inactiveLabel {
     font-weight: bold;
     font-family: var(--bold-font);
+    grid-row-start: 3;
 }
 
 .activeLabel {
@@ -39,4 +42,9 @@
 
 .inactiveLabel {
     color: var(--inactive-color);
+}
+
+.pointer {
+    width: fit-content;
+    align-self: flex-end;
 }

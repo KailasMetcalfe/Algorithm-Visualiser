@@ -18,14 +18,13 @@ const binarySearchJs = `function binarySearch(array, item) {
     return found;
 }`;
 
-const binarySearchPy = `import math
-def binarySearch(array, item):
+const binarySearchPy = `def binarySearch(array, item):
     # ErrorCheck ....
     
     found = False
     leftP = 0
     rightP = len(array) - 1
-    middleP = math.floor((leftP + rightP) / 2)
+    middleP = (leftP + rightP) // 2
 
     while (not(found)) and (leftP <= rightP):
         if array[middleP] == item:
@@ -36,7 +35,7 @@ def binarySearch(array, item):
             else:
                 leftP = middleP + 1
 
-        middleP = math.floor((leftP + rightP) / 2)
+        middleP = (leftP + rightP) // 2
         
     return found`;
 

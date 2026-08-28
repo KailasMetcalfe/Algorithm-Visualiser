@@ -1,0 +1,28 @@
+.mainMerge,
+.mainDivide {
+    min-height: 25rem;
+    display: flex;
+}
+
+.mainMerge {
+    display: flex;
+    gap: 3rem;
+}
+
+.subArrays {
+    display: flex;
+    align-items: flex-end;
+}
+
+.subArray {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.title {
+    font-weight: bold;
+    font-family: var(--bold-font);
+    font-size: 1.4rem;
+}

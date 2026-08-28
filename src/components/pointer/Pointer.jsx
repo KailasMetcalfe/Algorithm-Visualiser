@@ -7,7 +7,7 @@ export default function Pointer({ size }) {
                 <defs>
                     <marker
                         id="arrow"
-                        viewBox="0 0 14 10"
+                        viewBox="0 0 10 14"
                         refX="5"
                         refY="7"
                         markerWidth="12"

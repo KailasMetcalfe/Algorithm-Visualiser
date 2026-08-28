@@ -45,7 +45,8 @@
 }
 
 .activeLight {
-    background-color: rgb(88, 88, 88);
+    background-color: rgb(65, 65, 65);
+    color: rgb(245, 245, 245);
 }
 
 .activeDark {
@@ -53,7 +54,7 @@
 }
 
 .notActive {
-    background-color: rgb(197, 197, 197);
+    background-color: rgb(219, 219, 219);
 }
 
 .brightness {

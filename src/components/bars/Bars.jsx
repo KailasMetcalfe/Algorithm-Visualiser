@@ -1,8 +1,21 @@
+import Pointer from "../pointer/Pointer";
 import styles from "./bars.module.css";
 
-export default function Bars({ array }) {
+export default function Bars({ array, pointer = null }) {
+    const pointerSize = 40;
     return (
-        <div className={styles.main} style={{ "--size": array.length }}>
+        <div
+            className={styles.main}
+            style={{ "--size": array.length, "--pointer-size": pointerSize }}
+        >
+            {pointer !== null ? (
+                <div
+                    className={styles.pointer}
+                    style={{ gridRowStart: 1, gridColumnStart: pointer + 2 }}
+                >
+                    <Pointer size={pointerSize} />
+                </div>
+            ) : null}
             {array.map((item, index) => {
                 return (
                     <div
@@ -10,7 +23,10 @@ export default function Bars({ array }) {
                         className={
                             item.active ? styles.activeBar : styles.inactiveBar
                         }
-                        style={{ height: `calc(var(--scale) * ${item.value})` }}
+                        style={{
+                            height: `calc(var(--scale) * ${item.value})`,
+                            gridColumnStart: index + 2,
+                        }}
                     ></div>
                 );
             })}
@@ -23,6 +39,7 @@ export default function Bars({ array }) {
                                 ? styles.activeLabel
                                 : styles.inactiveLabel
                         }
+                        style={{ gridColumnStart: index + 2 }}
                     >
                         {item.value}
                     </span>
