@@ -1,0 +1,12 @@
+.node {
+    display: flex;
+    width: var(--node-size, 50px);
+    height: var(--node-size, 50px);
+    border: var(--node-thickness, 2px) var(--node-border-color, black) solid;
+    border-radius: 50%;
+    color: var(--node-color, black);
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}

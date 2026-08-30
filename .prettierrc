@@ -1,5 +1,13 @@
 {
     "semi": true,
     "trailingComma": "es5",
-    "tabWidth": 4
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "**/*.test.js",
+            "options": {
+                "printWidth": 90
+            }
+        }
+    ]
 }

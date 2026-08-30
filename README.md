@@ -1,3 +1,22 @@
+## Tree Maths derivation
+
+Note that $L$ represents the length of the input array (ie total number of nodes in the tree).<br>
+
+We ask how many leaf nodes are on the smallest perfect binary tree which contains our original tree. We set up two inequalities to solve for this. <br>
+In particular, we want the smallest $n \in$ $\mathbb{Z}^+$ such that,
+$$ L < 2^n$$
+This comes from the fact that the smallest encompassing perfect binary tree would have exactly $2^n$ leaf nodes. <br>
+Rearranging gives $$\log_2(L) < n$$
+However we also have the condition that since we want the smallest $n$, that
+$$ L \ge 2^{n-1} \implies$$
+$$ \log_2(L) \ge n-1 \implies $$
+$$ \log_2(L) + 1\ge n $$
+Hence we have the following inequality,
+$$ \log_2(L) < n \le \log_2(L) + 1$$
+
+We require $n \in$ $\mathbb{Z}^+$ thus, $n = \left\lfloor \log_2(L) + 1\right\rfloor$ works.
+<br>
+
 ## Template Contents
 
 Base React template with ESLint, Prettier, vitest (and other testing libraries)

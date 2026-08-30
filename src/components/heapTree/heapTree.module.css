@@ -1,0 +1,33 @@
+.tree {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    justify-items: center;
+    row-gap: var(--row-gap);
+    column-gap: var(--column-gap);
+    position: relative;
+}
+
+.active {
+    --node-border-color: black;
+}
+
+.inactive {
+    --node-border-color: rgba(43, 43, 43, 0.473);
+    --node-color: rgba(43, 43, 43, 0.473);
+}
+
+.selected {
+    --node-border-color: rgb(0, 206, 221);
+    --node-thickness: 3px;
+}
+
+.inactive.selected {
+    --node-border-color: rgba(0, 206, 221, 0.473);
+}
+
+.linesWrapper {
+    position: absolute;
+    width: var(--total-width);
+    height: var(--total-height);
+}
