@@ -1,11 +1,20 @@
 import { useMemo } from "react";
 import * as d3 from "d3-force";
 
+import styles from "./graph.module.css";
 import Node from "../node/Node";
 
-function Graph({ initialNodes, initialEdges }) {
+function Graph({
+    initialNodes,
+    initialEdges,
+    source,
+    target,
+    visited,
+    current,
+    neighbour,
+}) {
     const NODE_RADIUS = 25;
-    const MAX_WIDTH = 800;
+    const MAX_WIDTH = 700;
     const MAX_HEIGHT = 500;
 
     const { nodes, edges } = useMemo(() => {
@@ -123,20 +132,33 @@ function Graph({ initialNodes, initialEdges }) {
                 })}
             </svg>
 
-            {nodes.map((node) => (
-                <div
-                    key={node.value}
-                    style={{
-                        position: "absolute",
-                        left: node.x,
-                        top: node.y,
-                        transform: "translate(-50%, -50%)",
-                        "--node-size": `${NODE_RADIUS * 2}px`,
-                    }}
-                >
-                    <Node value={node.value} />
-                </div>
-            ))}
+            {nodes.map((node) => {
+                const activeClasses = [
+                    styles.node,
+                    node.value === source && styles.source,
+                    node.value === target && styles.target,
+                    visited.includes(node.value) && styles.visited,
+                    node.value === current && styles.current,
+                    node.value === neighbour && styles.neighbour,
+                ]
+                    .filter(Boolean)
+                    .join(" ");
+                return (
+                    <div
+                        key={node.value}
+                        className={activeClasses}
+                        style={{
+                            position: "absolute",
+                            left: node.x,
+                            top: node.y,
+                            transform: "translate(-50%, -50%)",
+                            "--node-size": `${NODE_RADIUS * 2}px`,
+                        }}
+                    >
+                        <Node value={node.value} />
+                    </div>
+                );
+            })}
         </div>
     );
 }

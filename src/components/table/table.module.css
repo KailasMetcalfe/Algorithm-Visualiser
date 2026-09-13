@@ -1,0 +1,29 @@
+.table {
+    border-collapse: collapse;
+}
+
+.caption {
+    caption-side: top;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+th.cell {
+    font-size: 1.6rem;
+    border-bottom: 1px solid black;
+    padding: 0 1rem;
+}
+
+.cell:last-child {
+    border-right: none;
+}
+
+td.cell {
+    padding: 0.1rem 0;
+}
+
+.cell {
+    text-align: center;
+    font-size: 1.4rem;
+    border-right: 1px solid black;
+}

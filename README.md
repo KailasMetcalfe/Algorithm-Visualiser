@@ -18,6 +18,8 @@ $$\log_2(L) < n \le \log_2(L) + 1$$
 
 We require $n \in$ $\mathbb{Z}^+$ thus, $n = \left\lfloor \log_2(L) + 1\right\rfloor$ works. <br>
 
+## Graph weight text positioning
+
 ## Template Contents
 
 Base React template with ESLint, Prettier, vitest (and other testing libraries)

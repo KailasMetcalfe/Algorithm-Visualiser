@@ -1,7 +1,9 @@
 import { useOutletContext } from "react-router";
 import { useEffect, useMemo, useState } from "react";
-import { randomArray } from "../../utils/randomiseArray";
+// import { randomGraph } from "../../utils/randomGraph.js";
 
+import Table from "../../components/table/Table.jsx";
+import Array from "../../components/array/Array.jsx";
 import Graph from "../../components/graph/Graph.jsx";
 import DirectedGraph from "../../utils/DirectedGraph.js";
 
@@ -40,33 +42,49 @@ function Dijkstra() {
             name: "Dijkstra",
             // codeSnippets: codeSnippets,
             historyLength: history.length,
-            // randomise: () => setWeights(randomArray(14)),
+            // randomise: () => setState(randomGr),
         });
     }, [setAlgorithm, setHistoryIndex, history.length]);
 
-    // const currIteration = history[historyIndex];
+    const currIteration = history[historyIndex];
 
-    // const activeArray = currIteration.array.map((item, index) => ({
-    //     value: item,
-    //     active: index < currIteration.heapSize,
-    // }));
-
-    // const highlightArray = activeArray.map((item, i) => {
-    //     return {
-    //         ...item,
-    //         selected:
-    //             i === currIteration.current || i === currIteration.swapping,
-    //     };
-    // });
-    console.log(state.graph.edges());
     return (
         <div className={styles.main}>
-            <Graph
-                initialNodes={state.graph.nodes().map((val) => {
-                    return { value: val };
-                })}
-                initialEdges={state.graph.edges()}
-            />
+            <div className={styles.graphWrapper}>
+                <Graph
+                    initialNodes={currIteration.graph.nodes().map((val) => {
+                        return { value: val };
+                    })}
+                    initialEdges={currIteration.graph.edges()}
+                    visited={currIteration.visited}
+                    source={currIteration.source}
+                    target={currIteration.end}
+                    current={currIteration.current}
+                    neighbour={currIteration.neighbour}
+                />
+                <div className={styles.info}>
+                    <span className={styles.source}>
+                        Source: {currIteration.source}
+                    </span>
+                    <span className={styles.target}>
+                        Target: {currIteration.end}
+                    </span>
+                </div>
+            </div>
+            <div className={styles.state}>
+                <div className={styles.visited}>
+                    <Array caption="Visited" items={currIteration.visited} />
+                </div>
+                <div className={styles.table}>
+                    <Table
+                        caption="Priority Queue"
+                        headings={["Node", "Distance"]}
+                        rows={currIteration.pq.map((node) => {
+                            return [node, currIteration.distances.get(node)];
+                        })}
+                    />
+                </div>
+            </div>
         </div>
     );
 }

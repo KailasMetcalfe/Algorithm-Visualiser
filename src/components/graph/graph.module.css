@@ -1,0 +1,53 @@
+.node {
+    --node-color: black;
+    --node-border-color: black;
+}
+
+.source {
+    --node-color: white;
+    --node-border-color: white;
+}
+
+.target {
+    --node-color: orange;
+    --node-border-color: orange;
+}
+
+.visited {
+    --node-color: rgba(43, 43, 43, 0.65);
+    --node-border-color: rgba(43, 43, 43, 0.65);
+}
+
+.source.visited {
+    --node-color: rgba(255, 255, 255, 0.65);
+    --node-border-color: rgba(255, 255, 255, 0.65);
+}
+
+.target.visited {
+    --node-color: rgba(255, 166, 0, 0.65);
+    --node-border-color: rgba(255, 166, 0, 0.65);
+}
+
+.current {
+    --node-thickness: 3px;
+    --node-color: cyan;
+    --node-border-color: cyan;
+}
+
+.source.current {
+    --node-color: rgb(188, 255, 246);
+    --node-border-color: rgb(188, 255, 246);
+}
+
+.target.current {
+    --node-border-color: cyan;
+}
+
+.neighbour {
+    --node-color: rgba(0, 202, 202, 0.637);
+    --node-border-color: rgba(0, 202, 202, 0.637);
+}
+
+.target.neighbour {
+    --node-border-color: rgba(0, 202, 202, 0.637);
+}
