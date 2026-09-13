@@ -1,4 +1,4 @@
-import mergeSort from "../../src/pages/mergeSort/mergeSortAlg.js";
+import mergeSort from "./mergeSortAlg.js";
 
 describe("Check mergeSort invalid arguments", () => {
     it("Input not an array", () => {

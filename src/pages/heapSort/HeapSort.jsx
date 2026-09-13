@@ -6,12 +6,12 @@ import HeapTree from "../../components/heapTree/HeapTree.jsx";
 import Bars from "../../components/bars/Bars.jsx";
 
 import heapSort from "./heapSortAlg.js";
-// import codeSnippets from "./heapSortSnippets";
+import codeSnippets from "./heapSortSnippets";
 import styles from "./heapSort.module.css";
 
 function HeapSort() {
     const { historyIndex, setHistoryIndex, setAlgorithm } = useOutletContext();
-    const [originalArray, setOriginalArray] = useState([45, 12, 7, 68, 27, 19]);
+    const [originalArray, setOriginalArray] = useState([3, 4, 1, 8, 12, 18, 5]);
 
     const history = useMemo(() => {
         return heapSort(originalArray);
@@ -19,8 +19,8 @@ function HeapSort() {
 
     useEffect(() => {
         setAlgorithm({
-            name: "Merge Sort",
-            // codeSnippets: codeSnippets,
+            name: "Heap Sort",
+            codeSnippets: codeSnippets,
             historyLength: history.length,
             randomise: () => setOriginalArray(randomArray(10)),
         });

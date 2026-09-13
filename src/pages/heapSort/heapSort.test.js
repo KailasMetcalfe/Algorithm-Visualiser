@@ -1,4 +1,4 @@
-import heapSort from "../../src/pages/heapSort/heapSortAlg.js";
+import heapSort from "./heapSortAlg.js";
 
 describe("Check heapSort invalid arguments", () => {
     it("Input not an array", () => {

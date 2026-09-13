@@ -1,4 +1,4 @@
-import insertionSort from "../../src/pages/insertionSort/insertionSortAlg.js";
+import insertionSort from "./insertionSortAlg.js";
 
 describe("Check insertionSort invalid arguments", () => {
     it("Input not an array", () => {
