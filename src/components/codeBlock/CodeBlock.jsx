@@ -6,6 +6,9 @@ import {
 import styles from "./codeBlock.module.css";
 import { useState } from "react";
 
+import sunIcon from "../../assets/icons/sun.svg";
+import moonIcon from "../../assets/icons/moon.svg";
+
 export default function CodeBlock({ codeArray }) {
     const [language, setLanguage] = useState("javascript");
     const [isDark, setIsDark] = useState(true);
@@ -42,7 +45,7 @@ export default function CodeBlock({ codeArray }) {
                     onClick={() => setIsDark(!isDark)}
                 >
                     <img
-                        src={isDark ? "./icons/sun.svg" : "./icons/moon.svg"}
+                        src={isDark ? sunIcon : moonIcon}
                         alt={isDark ? "sun" : "moon"}
                     />
                 </button>

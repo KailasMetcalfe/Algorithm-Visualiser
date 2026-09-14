@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import CodeBlock from "../../components/codeBlock/CodeBlock";
 import styles from "./visualiser.module.css";
 
+import pauseIcon from "../../assets/icons/pause.svg";
+import playIcon from "../../assets/icons/play.svg";
+
 function Visualiser() {
     const navigate = useNavigate();
     const [algorithm, setAlgorithm] = useState({
@@ -83,11 +86,7 @@ function Visualiser() {
                                 }
                             >
                                 <img
-                                    src={
-                                        play
-                                            ? "./icons/pause.svg"
-                                            : "./icons/play.svg"
-                                    }
+                                    src={play ? pauseIcon : playIcon}
                                     alt={play ? "pause" : "play"}
                                 />
                             </button>
