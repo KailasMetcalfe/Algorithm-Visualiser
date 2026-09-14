@@ -25,6 +25,20 @@ function Graph({
             return { ...edge };
         });
 
+        // Custom force to keep all nodes confined to the area
+        function boxingForce() {
+            for (let node of initialNodeCopy) {
+                // Of the positions exceed the area, set them to the boundary position.
+                node.x = Math.max(
+                    NODE_RADIUS,
+                    Math.min(MAX_WIDTH - NODE_RADIUS, node.x)
+                );
+                node.y = Math.max(
+                    NODE_RADIUS,
+                    Math.min(MAX_HEIGHT - NODE_RADIUS, node.y)
+                );
+            }
+        }
         // arrange graph via forces
         const simulation = d3
             .forceSimulation(initialNodeCopy)
@@ -37,7 +51,8 @@ function Graph({
                     .distance((d) => 100 + d.weight * 10)
             )
             .force("collide", d3.forceCollide().radius(NODE_RADIUS + 5))
-            .force("center", d3.forceCenter(MAX_WIDTH / 2, MAX_HEIGHT / 2));
+            .force("center", d3.forceCenter(MAX_WIDTH / 2, MAX_HEIGHT / 2))
+            .force("bounds", boxingForce);
 
         for (let i = 0; i < 300; i++) {
             simulation.tick();
@@ -79,8 +94,9 @@ function Graph({
                     // Makes line connect to border of node rather than centre
                     const distX = edge.target.x - edge.source.x;
                     const distY = edge.target.y - edge.source.y;
-                    const hyp = Math.sqrt(
-                        Math.pow(distX, 2) + Math.pow(distY, 2)
+                    const hyp = Math.max(
+                        Math.sqrt(Math.pow(distX, 2) + Math.pow(distY, 2)),
+                        0.001
                     );
 
                     const offsetX = (NODE_RADIUS / hyp) * distX;
@@ -104,7 +120,7 @@ function Graph({
                     // perpendicular unit vector will be (-scaledY, scaledX)
                     // See README.md for more explanation
 
-                    const OFFSET = 12;
+                    const OFFSET = 18;
                     const labelX = midX - scaledY * OFFSET;
                     const labelY = midY + scaledX * OFFSET;
 

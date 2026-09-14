@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router";
 import { useEffect, useMemo, useState } from "react";
-// import { randomGraph } from "../../utils/randomGraph.js";
+import randomGraph from "../../utils/randomGraph.js";
 
 import Table from "../../components/table/Table.jsx";
 import Array from "../../components/array/Array.jsx";
@@ -8,7 +8,7 @@ import Graph from "../../components/graph/Graph.jsx";
 import DirectedGraph from "../../utils/DirectedGraph.js";
 
 import dijkstra from "./dijkstraAlg.js";
-// import codeSnippets from "./dijkstraSnippets";
+import codeSnippets from "./dijkstraSnippets";
 import styles from "./dijkstra.module.css";
 
 function Dijkstra() {
@@ -40,9 +40,14 @@ function Dijkstra() {
     useEffect(() => {
         setAlgorithm({
             name: "Dijkstra",
-            // codeSnippets: codeSnippets,
+            codeSnippets: codeSnippets,
             historyLength: history.length,
-            // randomise: () => setState(randomGr),
+            randomise: () =>
+                setState({
+                    source: Math.floor(Math.random() * 8),
+                    target: Math.floor(Math.random() * 8),
+                    graph: randomGraph(8, 0.3, 1),
+                }),
         });
     }, [setAlgorithm, setHistoryIndex, history.length]);
 
@@ -73,9 +78,11 @@ function Dijkstra() {
             </div>
             <div className={styles.state}>
                 <div className={styles.visited}>
+                    <span className={styles.visitedText}>Visited</span>
                     <Array caption="Visited" items={currIteration.visited} />
                 </div>
                 <div className={styles.table}>
+                    <span className={styles.pqText}>Priority Queue</span>
                     <Table
                         caption="Priority Queue"
                         headings={["Node", "Distance"]}

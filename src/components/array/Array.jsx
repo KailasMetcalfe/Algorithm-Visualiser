@@ -1,11 +1,10 @@
 import styles from "./array.module.css";
 
-function Array({ caption, items }) {
+function Array({ items }) {
     return (
         <table className={styles.array}>
-            <caption className={styles.caption}>{caption}</caption>
             <thead>
-                <tr>
+                <tr className={styles.main}>
                     {items.map((val, i) => {
                         return (
                             <th key={`${val}${i}`} className={styles.cell}>

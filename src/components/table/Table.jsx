@@ -1,8 +1,7 @@
 import styles from "./table.module.css";
-function Table({ caption, headings, rows }) {
+function Table({ headings, rows }) {
     return (
         <table className={styles.table}>
-            <caption className={styles.caption}>{caption}</caption>
             <thead>
                 <tr className={styles.headerRow}>
                     {headings.map((heading, i) => {

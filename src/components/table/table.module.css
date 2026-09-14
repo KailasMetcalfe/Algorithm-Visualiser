@@ -2,12 +2,6 @@
     border-collapse: collapse;
 }
 
-.caption {
-    caption-side: top;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-}
-
 th.cell {
     font-size: 1.6rem;
     border-bottom: 1px solid black;

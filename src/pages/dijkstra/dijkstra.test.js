@@ -1,5 +1,5 @@
 import dijkstra from "./dijkstraAlg.js";
-import Graph from "../../utils/Graph.js";
+import DirectedGraph from "../../utils/DirectedGraph.js";
 
 describe("Check dijkstra with graph of 5 nodes", () => {
     function map(...values) {
@@ -8,7 +8,7 @@ describe("Check dijkstra with graph of 5 nodes", () => {
 
     let graph;
     beforeEach(() => {
-        graph = new Graph(5, [
+        graph = new DirectedGraph(5, [
             { from: 0, to: 1, value: 4, directed: false },
             { from: 0, to: 3, value: 6, directed: false },
             { from: 0, to: 4, value: 5, directed: false },

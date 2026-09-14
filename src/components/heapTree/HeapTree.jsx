@@ -12,7 +12,7 @@ function HeapTree({ array }) {
     const leftChildIndex = (i) => 2 * i + 1;
     const rightChildIndex = (i) => 2 * i + 2;
 
-    const nodeSize = 70;
+    const nodeSize = 60;
     const rowGap = 30;
     const columnGap = 20;
 
