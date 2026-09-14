@@ -118,7 +118,6 @@ function Graph({
                     const scaledY = distY / hyp;
 
                     // perpendicular unit vector will be (-scaledY, scaledX)
-                    // See README.md for more explanation
 
                     const OFFSET = 18;
                     const labelX = midX - scaledY * OFFSET;
