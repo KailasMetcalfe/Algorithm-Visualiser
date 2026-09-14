@@ -49,7 +49,7 @@ function Dijkstra() {
                     graph: randomGraph(8, 0.3, 1),
                 }),
         });
-    }, [setAlgorithm, setHistoryIndex, history.length]);
+    }, [setAlgorithm, history.length]);
 
     const currIteration = history[historyIndex];
 
@@ -74,6 +74,22 @@ function Dijkstra() {
                     <span className={styles.target}>
                         Target: {currIteration.end}
                     </span>
+                    <button
+                        className={styles.randomiseSearch}
+                        type="button"
+                        onClick={() => {
+                            setState((state) => {
+                                return {
+                                    ...state,
+                                    source: Math.floor(Math.random() * 8),
+                                    target: Math.floor(Math.random() * 8),
+                                };
+                            });
+                            setHistoryIndex(0);
+                        }}
+                    >
+                        Randomise search
+                    </button>
                 </div>
             </div>
             <div className={styles.state}>

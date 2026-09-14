@@ -10,7 +10,7 @@ import codeSnippets from "./heapSortSnippets";
 import styles from "./heapSort.module.css";
 
 function HeapSort() {
-    const { historyIndex, setHistoryIndex, setAlgorithm } = useOutletContext();
+    const { historyIndex, setAlgorithm } = useOutletContext();
     const [originalArray, setOriginalArray] = useState([3, 4, 1, 8, 12, 18, 5]);
 
     const history = useMemo(() => {
@@ -24,7 +24,7 @@ function HeapSort() {
             historyLength: history.length,
             randomise: () => setOriginalArray(randomArray(10)),
         });
-    }, [setAlgorithm, setHistoryIndex, history.length]);
+    }, [setAlgorithm, history.length]);
 
     const currIteration = history[historyIndex];
 

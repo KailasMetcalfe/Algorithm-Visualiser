@@ -9,7 +9,7 @@ import codeSnippets from "./mergeSortSnippets";
 import styles from "./mergeSort.module.css";
 
 function MergeSort() {
-    const { historyIndex, setHistoryIndex, setAlgorithm } = useOutletContext();
+    const { historyIndex, setAlgorithm } = useOutletContext();
     const [originalArray, setOriginalArray] = useState([
         45, 12, 7, 68, 27, 19, 4,
     ]);
@@ -25,7 +25,7 @@ function MergeSort() {
             historyLength: history.length,
             randomise: () => setOriginalArray(randomArray(7)),
         });
-    }, [setAlgorithm, setHistoryIndex, history.length]);
+    }, [setAlgorithm, history.length]);
 
     const currIteration = history[historyIndex];
 

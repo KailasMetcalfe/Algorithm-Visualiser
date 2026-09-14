@@ -30,6 +30,10 @@
     color: rgb(236, 153, 0);
 }
 
+.randomiseSearch {
+    font-size: 1rem;
+}
+
 .state {
     display: flex;
     flex-direction: column;

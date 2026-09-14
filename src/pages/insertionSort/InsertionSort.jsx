@@ -11,7 +11,7 @@ import codeSnippets from "./insertionSortSnippets";
 import styles from "./insertionSort.module.css";
 
 function InsertionSort() {
-    const { historyIndex, setHistoryIndex, setAlgorithm } = useOutletContext();
+    const { historyIndex, setAlgorithm } = useOutletContext();
     const [originalArray, setOriginalArray] = useState([
         45, 12, 7, 68, 27, 19, 4,
     ]);
@@ -27,7 +27,7 @@ function InsertionSort() {
             historyLength: history.length,
             randomise: () => setOriginalArray(randomArray(7)),
         });
-    }, [setAlgorithm, setHistoryIndex, history.length]);
+    }, [setAlgorithm, history.length]);
 
     const { array, index, insertionIndex, stored } = history[historyIndex];
     const iteration = useMemo(() => {

@@ -12,7 +12,7 @@ const DEFAULT_SEARCH = {
 };
 
 function BinarySearch() {
-    const { historyIndex, setHistoryIndex, setAlgorithm } = useOutletContext();
+    const { historyIndex, setAlgorithm } = useOutletContext();
     const [search, setSearch] = useState(DEFAULT_SEARCH);
 
     const history = useMemo(() => {
@@ -49,7 +49,7 @@ function BinarySearch() {
             historyLength: history.length,
             randomise: randomiseSearch,
         });
-    }, [setAlgorithm, setHistoryIndex, history.length]);
+    }, [setAlgorithm, history.length]);
 
     return (
         <div className={styles.main}>
